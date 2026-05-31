@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الملفات | تحميل</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #F4EADE; 
+            --text-color: #0A0A0A; 
+            --accent-color: #C69B3C; 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Alexandria', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-weight: 300;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* شبكة عرض منتظمة ومتساوية */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* تصميم الكرت بحجم موحد */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* يجبر الكروت على أخذ نفس الطول في الصف الواحد */
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* حاوية الصورة بطول ثابت لحل مشكلة الأبواب الطويلة */
+        .img-container {
+            width: 100%;
+            height: 260px; /* طول ثابت لكل الصور */
+            background-color: #f9f9f9; /* لون خلفية خفيف يملأ الفراغ */
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* الصورة نفسها داخل الحاوية */
+        .card-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* تصغير الصورة لتناسب الحاوية بدون قص */
+        }
+
+        .card-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+
+        .card-title {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: block;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>المرفقات</h1>
+        <p>استعرض التصاميم وحمّل ملفات الـ PDF</p>
+    </header>
+
+    <main class="grid-container">
+        
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Door 1.png" alt="باب 1" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">باب 1</h2>
+                <a href="Attachments/Door 1.pdf" download="Door 1.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Door 2.png" alt="باب 2" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">باب 2</h2>
+                <a href="Attachments/Door 2.pdf" download="Door 2.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Front 1.png" alt="واجهة 1" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">واجهة 1</h2>
+                <a href="Attachments/Front 1.pdf" download="Front 1.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Front 2.png" alt="واجهة 2" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">واجهة 2</h2>
+                <a href="Attachments/Front 2.pdf" download="Front 2.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Wall 1.png" alt="حائط 1" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">حائط 1</h2>
+                <a href="Attachments/Wall 1.pdf" download="Wall 1.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Wall 2.png" alt="حائط 2" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">حائط 2</h2>
+                <a href="Attachments/Wall 2.pdf" download="Wall 2.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Wall Clean 1.png" alt="حائط سادة 1" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">حائط سادة 1</h2>
+                <a href="Attachments/Wall Clean 1.pdf" download="Wall Clean 1.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="Attachments/Wall Clean 2.png" alt="حائط سادة 2" class="card-image" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">حائط سادة 2</h2>
+                <a href="Attachments/Wall Clean 2.pdf" download="Wall Clean 2.pdf" class="download-btn">تحميل الملف</a>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
